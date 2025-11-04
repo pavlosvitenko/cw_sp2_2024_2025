@@ -1,0 +1,38 @@
+STARTPROGRAM pppp1;
+STARTBLOCK VARIABLE INT_4 aaaa1, bbbb2, cycl1, cycl2, xval1;
+  READ ( aaaa1 );
+  READ ( bbbb2 );
+
+  aaaa1 =: cycl1;
+
+ IF cycl1 LT cycl2 ADD 1 {
+    REPEAT {
+     WRITE ( cycl1 MUL cycl1 );
+	  cycl1 ADD 1 =: cycl1;
+ }
+  UNTIL cycl1 LT bbbb2 ADD 1
+} 
+
+  0 =: xval1;
+  1 =: cycl1;
+  
+  IF cycl1 LT aaaa1 ADD 1 {
+    REPEAT {
+
+      1 =: cycl2;
+
+      IF cycl2 LT bbbb2 ADD 1 {
+	    REPEAT {
+          xval1 ADD 1 =: xval1; 
+	  cycl2 ADD 1 =: cycl2;
+        }
+        UNTIL cycl2 LT bbbb2 ADD 1
+	}
+	cycl1 ADD 1 =: cycl1;
+    }
+    UNTIL cycl1 LT aaaa1 ADD 1
+  }
+
+  WRITE ( xval1 );
+
+ENDBLOCK

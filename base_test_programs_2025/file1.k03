@@ -1,0 +1,19 @@
+STARTPROGRAM pppp1; 
+STARTBLOCK VARIABLE INT_4 aaaa0, bbbb1, cccc2, dddd3;
+  READ ( aaaa0 );
+  READ ( bbbb1 );
+  
+  WRITE ( aaaa0 ADD bbbb1 );
+  WRITE ( aaaa0 SUB bbbb1 );
+  WRITE ( aaaa0 MUL bbbb1 );
+  WRITE ( aaaa0 DIV bbbb1 );
+  WRITE ( aaaa0 MOD bbbb1 );
+
+  (aaaa0 SUB bbbb1) MUL 10 ADD (aaaa0 ADD bbbb1) DIV 10 =: cccc2;
+  cccc2 SUB cccc2 MOD 10 =: dddd3;
+
+  WRITE ( cccc2 );
+  WRITE ( dddd3 );
+
+ENDBLOCK
+
